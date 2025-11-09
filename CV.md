@@ -21,7 +21,7 @@ I have been working there for ages, doing documentation systems, e-learning solu
 
 ### Employment History
 
-#### System Engineer, AAC Global Oy, March 1999 - present  
+#### System Engineer, AAC Global Oy, March 2001 - present  
 #### IT Guru, Siemens
 VAX VMS, Oracle databases, Linux scripts for various deployments, etc.
 
