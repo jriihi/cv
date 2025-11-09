@@ -1,0 +1,30 @@
+name: Build CV PDF
+
+on:
+  push:
+    branches:
+      - main # Or whatever your default branch is
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build PDF with Pandoc
+        uses: docker://pandoc/latex:latest
+        with:
+          args: >- # Pass arguments to pandoc
+            --standalone
+            --from=markdown
+            --to=pdf
+            --output=Juhana_Riihimaki_CV.pdf
+            CV.md # Assuming CV.md is in the root of your repo
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CV-PDF
+          path: Juhana_Riihimaki_CV.pdf
